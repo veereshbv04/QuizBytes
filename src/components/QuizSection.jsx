@@ -1,22 +1,30 @@
 import {useState} from "react"
 import { useCategory } from "../contexts/category-context"
 import {questions} from "../database/quizdata"
+import { useNavigate } from "react-router-dom"
+import ScorePage from "./ScorePage"
 export default function QuizSection(){
-
-    const {category} = useCategory()
+    const navigate = useNavigate()
+    const {category, answerCheckArray} = useCategory()
     const questionSet = questions.filter(item => item.id == category)
     console.log(questionSet)
     const categoryquestions = questionSet[0].questions
-    console.log(categoryquestions)
+    console.log("ddd")
+    const tosend = JSON.parse(JSON.stringify(categoryquestions))
+    console.log(tosend)
 
     const [currentquestion, setCurrentquestion] = useState(0)
-
-    const handleClick = (isCorrect)=>{
     
+    const handleClick = (isCorrect)=>{
+        if(isCorrect){
+            answerCheckArray.push(true)
+        }else{
+            answerCheckArray.push(false)
+        }
         if(currentquestion + 1 < categoryquestions.length){
              setCurrentquestion(currentquestion + 1)
         }else{
-            
+            navigate("/scorepage")
         }
     }
 

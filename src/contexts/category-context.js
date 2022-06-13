@@ -5,12 +5,12 @@ const CategoryContext = createContext("g")
 const CategoryProvider = ({children})=>{
 
     const [category, setCategory] = useState("")
-    
+    const answerCheckArray = []
     const chooseCategory= (category)=>{
         setCategory(category)
     }
 
-    return <CategoryContext.Provider value={{category,chooseCategory} }>{children}</CategoryContext.Provider>
+    return <CategoryContext.Provider value={{category,chooseCategory, answerCheckArray} }>{children}</CategoryContext.Provider>
 }
 
 const useCategory = ()=>{
