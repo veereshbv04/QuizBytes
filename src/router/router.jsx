@@ -7,6 +7,7 @@ export default function Router(){
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/quizsection" element={<QuizSection/>}/>
+            <Route path="*" element={<div>Not Found</div>} />
         </Routes>
     )
     

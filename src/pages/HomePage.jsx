@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom"
+import { useCategory } from "../contexts/category-context"
 
 export default function HomePage(){
+
+    const {chooseCategory} = useCategory()
+    console.log(chooseCategory)
+
     return (
         <main>
-        <div class="quiz-card">
+        <div className="quiz-card">
             <img src="/theme.jpg"/>
             <h2>JavaScript Quizes</h2>
-            <Link to="quizsection"><button value={"k"} class="btn">Play Now</button></Link>
+            <Link to="quizsection"><button value={1} onClick={(event)=> chooseCategory(event.target.value)} className="btn">Play Now</button></Link>
         </div>
-        <div class="quiz-card">
+        <div className="quiz-card">
             <img src="/theme.jpg" />
             <h2>JavaScript Quizes</h2>
-            <Link to="quizsection"><button class="btn">Play Now</button></Link>
+            <Link to="quizsection"><button value={2} onClick={(event)=> chooseCategory(event.target.value)} className="btn">Play Now</button></Link>
         </div>
-        <div class="quiz-card">
+        <div className="quiz-card">
             <img src="/theme.jpg" />
             <h2>JavaScript Quizes</h2>
-            <Link to="quizsection"><button class="btn">Play Now</button></Link>
+            <Link to="quizsection"><button value={3} onClick={(event)=> chooseCategory(event.target.value)} className="btn">Play Now</button></Link>
         </div>
        
     </main>
