@@ -1,9 +1,24 @@
+import {useState} from "react"
 import { useCategory } from "../contexts/category-context"
-
+import {questions} from "../database/quizdata"
 export default function QuizSection(){
 
     const {category} = useCategory()
-    console.log(category)
+    const questionSet = questions.filter(item => item.id == category)
+    console.log(questionSet)
+    const categoryquestions = questionSet[0].questions
+    console.log(categoryquestions)
+
+    const [currentquestion, setCurrentquestion] = useState(0)
+
+    const handleClick = (isCorrect)=>{
+    
+        if(currentquestion + 1 < categoryquestions.length){
+             setCurrentquestion(currentquestion + 1)
+        }else{
+            
+        }
+    }
 
     return (
         <main>
@@ -11,15 +26,15 @@ export default function QuizSection(){
          <section className="quiz-section">
             <div className="question-section">
                  <div className="question-count">
-                     <span>Question 2/</span>5
+                     <span>Question {currentquestion + 1}/</span>{categoryquestions.length}
                  </div>
-                 <h2>who is the prime minsiter of India</h2>
+                 <h2>{categoryquestions[currentquestion].questionText}</h2>
             </div>
             <div className="options-section">
-                <button className="btn"><a href="./score.html">Narendra Modi</a></button>
-                <button className="btn">Narendra Modi</button>
-                <button className="btn">Narendra Modi</button>
-                <button className="btn">Narendra Modi</button>
+                {categoryquestions[currentquestion].optionsText.map(options =>(
+                    <button key={options.option} onClick={()=>handleClick(options.isCorrect)} className="btn">{options.option}</button>
+                ))}
+               
             </div>
             
          </section>

@@ -4,7 +4,6 @@ import { useCategory } from "../contexts/category-context"
 export default function HomePage(){
 
     const {chooseCategory} = useCategory()
-    console.log(chooseCategory)
 
     return (
         <main>

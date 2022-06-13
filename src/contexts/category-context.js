@@ -4,7 +4,7 @@ const CategoryContext = createContext("g")
 
 const CategoryProvider = ({children})=>{
 
-    const [category, setCategory] = useState("e")
+    const [category, setCategory] = useState("")
     
     const chooseCategory= (category)=>{
         setCategory(category)

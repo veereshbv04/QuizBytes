@@ -65,3 +65,5 @@ const questions = [
         ]
     }
 ]
+
+export {questions}
