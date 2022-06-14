@@ -29,6 +29,24 @@ const questions = [
                     {option:"Math.min(x,y)", isCorrect:true},
                     {option:"Math.low(x,y)", isCorrect:false}
                 ]
+            },
+            {
+                questionText:"What is the output of 'console.log(typeof +'1')' ?",
+                optionsText:[
+                    {option:"Number", isCorrect:true},
+                    {option:"Object", isCorrect:false},
+                    {option:"String", isCorrect:false},
+                    {option:"Nan", isCorrect:false}
+                ]
+            },
+            {
+                questionText: "What is the output of 'console.log(2 +'4')' ?",
+                optionsText:[
+                    {option:"24", isCorrect:true},
+                    {option:"undefined", isCorrect:false},
+                    {option:"error", isCorrect:false},
+                    {option:"2", isCorrect:false}
+                ]
             }
         ]
     },
@@ -36,7 +54,7 @@ const questions = [
         id: 2,
         category: "html",
         questions: [{
-                questionText: "What do you understand bby HTML?",
+                questionText: "What do you understand by HTML?",
                 optionsText: [
                     {option: "HTML describes the structure of webpage",isCorrect: false},
                     {option: "HTML is standard markup language",   isCorrect: false},

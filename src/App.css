@@ -173,4 +173,15 @@ main{
     .question-count span{
         font-size: 1rem;
     }
+    .col-flex{
+        padding: 2rem;
+    }
+    .col-flex h2{
+        font-size: 1.5rem;
+    }
+}
+
+.col-flex{
+    display: flex;
+    flex-direction: column;
 }
