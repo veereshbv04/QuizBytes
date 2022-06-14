@@ -34,7 +34,103 @@ const questions = [
     },
     {
         id: 2,
-        category: "general",
+        category: "html",
+        questions: [{
+                questionText: "who prime minister of India",
+                optionsText: [
+                    {option: "Naredra Modi",isCorrect: true},
+                    {option: "henry ford",   isCorrect: false},
+                    {option: "William james",isCorrect: false},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who is education minister of india",
+                optionsText: [
+                    {option: "typesl gates",isCorrect: false},
+                    {option: "helliamry ford",isCorrect: false},
+                    {option: "james", isCorrect: true},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who developed vscode",
+                optionsText: [
+                    {option: "Microsoft",   isCorrect: false},
+                    {option: "oracle",   isCorrect: false},
+                    {option: "William james",   isCorrect: true},
+                    {option: "James WIlliam",   isCorrect: false}
+                ]
+            }
+        ]
+    },
+    {
+        id: 3,
+        category: "react",
+        questions: [{
+                questionText: "who prime minister of India",
+                optionsText: [
+                    {option: "Naredra Modi",isCorrect: true},
+                    {option: "henry ford",   isCorrect: false},
+                    {option: "William james",isCorrect: false},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who is education minister of india",
+                optionsText: [
+                    {option: "typesl gates",isCorrect: false},
+                    {option: "helliamry ford",isCorrect: false},
+                    {option: "james", isCorrect: true},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who developed vscode",
+                optionsText: [
+                    {option: "Microsoft",   isCorrect: false},
+                    {option: "oracle",   isCorrect: false},
+                    {option: "William james",   isCorrect: true},
+                    {option: "James WIlliam",   isCorrect: false}
+                ]
+            }
+        ]
+    },
+    {
+        id: 4,
+        category: "science",
+        questions: [{
+                questionText: "who prime minister of India",
+                optionsText: [
+                    {option: "Naredra Modi",isCorrect: true},
+                    {option: "henry ford",   isCorrect: false},
+                    {option: "William james",isCorrect: false},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who is education minister of india",
+                optionsText: [
+                    {option: "typesl gates",isCorrect: false},
+                    {option: "helliamry ford",isCorrect: false},
+                    {option: "james", isCorrect: true},
+                    {option: "James WIlliam",isCorrect: false}
+                ]
+            },
+            {
+                questionText: "who developed vscode",
+                optionsText: [
+                    {option: "Microsoft",   isCorrect: false},
+                    {option: "oracle",   isCorrect: false},
+                    {option: "William james",   isCorrect: true},
+                    {option: "James WIlliam",   isCorrect: false}
+                ]
+            }
+        ]
+    },
+    {
+        id: 5,
+        category: "information technology",
         questions: [{
                 questionText: "who prime minister of India",
                 optionsText: [
