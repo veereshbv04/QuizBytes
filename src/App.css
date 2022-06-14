@@ -163,4 +163,10 @@ main{
         flex-direction: column;
         width: 20rem;
     }
+    .question-count{
+        font-size: 1rem;
+    }
+    .question-count span{
+        font-size: 1rem;
+    }
 }
