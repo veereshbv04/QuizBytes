@@ -7,34 +7,25 @@ export default function QuizSection(){
     const navigate = useNavigate()
     const {category, answerCheckArray} = useCategory()
     const questionSet = questions.filter(item => item.id == category)
-    console.log(questionSet)
     const categoryquestions = questionSet[0].questions
 
-    const [currentquestion, setCurrentquestion] = useState(0)
+    const [currentquestionno, setCurrentquestionno] = useState(0)
     const [score, setScore] = useState(0)
-    const ptosend = JSON.parse(JSON.stringify(categoryquestions))
-    console.log(ptosend)
-    const [tosend, setToSend] = useState(ptosend)
+
+    const initialdata = JSON.parse(JSON.stringify(categoryquestions))
+    const [tosend, ] = useState(initialdata)
     
     
     const handleClick = (isCorrect, curr, index)=>{
-        console.log(curr, index)
         tosend[curr].optionsText[index]["userclicked"]=true
-        console.log(tosend)
-        console.log("final",tosend)
-       
         // tosend[curr].optionsText[index]["userclicked"] = true
         
         if(isCorrect){
-            setScore(score + 1)
-            console.log(score)
-            answerCheckArray.push(true)
-        }else{
-            answerCheckArray.push(false)
+            setScore(score + 1) 
         }
 
-        if(currentquestion + 1 < categoryquestions.length){
-             setCurrentquestion(currentquestion + 1)
+        if(currentquestionno + 1 < categoryquestions.length){
+             setCurrentquestionno(currentquestionno + 1)
         }else{
         navigate("/scorepage",{state:{tosend,score}})
         }
@@ -46,13 +37,13 @@ export default function QuizSection(){
          <section className="quiz-section">
             <div className="question-section">
                  <div className="question-count">
-                     <span>Question {currentquestion + 1}/</span>{categoryquestions.length}
+                     <span>Question {currentquestionno + 1}/</span>{categoryquestions.length}
                  </div>
-                 <h2>{categoryquestions[currentquestion].questionText}</h2>
+                 <h2>{categoryquestions[currentquestionno].questionText}</h2>
             </div>
             <div className="options-section">
-                {categoryquestions[currentquestion].optionsText.map((options, index) =>(
-                    <button key={options.option} onClick={()=>handleClick(options.isCorrect,currentquestion,index)} className="btn">{options.option}</button>
+                {categoryquestions[currentquestionno].optionsText.map((options, index) =>(
+                    <button key={options.option} onClick={()=>handleClick(options.isCorrect,currentquestionno,index)} className="btn">{options.option}</button>
                 ))}
                
             </div>

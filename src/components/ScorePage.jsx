@@ -1,27 +1,11 @@
 import { useLocation } from "react-router-dom"
-import { questions } from "../database/quizdata"
-import { useCategory } from "../contexts/category-context"
-import {useState} from "react"
 
 export default function ScorePage(){
-    const location = useLocation()
-    console.log(location)
-    const q = location.state.tosend 
-    const s = location.state.score
-    console.log(s)
-   
-    const {category} = useCategory()
-    console.log(q)
-    const questionSet = questions.filter(item => item.id == category)
-    const categoryquestions = q
-    console.log(categoryquestions)
-    // const [score, setScore] = useState(0)
-    function optioncolor(options){
-        // if(options.hasOwnProperty("userclicked") && options.isCorrect){
-        //     setScore(score + 1)
-    
-        // }
-        console.log(options)
+    const location = useLocation()  
+    const score = location.state.score
+    const categoryquestions = location.state.tosend
+
+    function optionColor(options){
         if(options.hasOwnProperty("userclicked") && !options.isCorrect){
             return "red-btn"
         }else if(options.isCorrect){
@@ -29,12 +13,11 @@ export default function ScorePage(){
         }else{
             return "btn"
         }
-        
     }
 
     return (
         <>
-        <h2 className="score-text ">You Scored {s}/ {categoryquestions.length}</h2>
+        <h2 className="score-text ">You Scored {score}/ {categoryquestions.length}</h2>
         {categoryquestions.map((currentquestion,index) =>(
          <main key={index}>
             
@@ -47,7 +30,7 @@ export default function ScorePage(){
             </div>
             <div className="options-section">
                 {categoryquestions[index].optionsText.map(options =>(
-                    <button key={options.option} onClick={()=>handleClick(options)} className={optioncolor(options)} >{options.option}</button>
+                    <button key={options.option} onClick={()=>handleClick(options)} className={optionColor(options)} >{options.option}</button>
                 ))}
                
             </div>
@@ -56,7 +39,6 @@ export default function ScorePage(){
      </main>
         ))}
         </>
-       
-        
+
     )
 }
