@@ -27,10 +27,12 @@ export default function QuizSection(){
         
         if(isCorrect){
             setScore(score + 1)
+            console.log(score)
             answerCheckArray.push(true)
         }else{
             answerCheckArray.push(false)
         }
+
         if(currentquestion + 1 < categoryquestions.length){
              setCurrentquestion(currentquestion + 1)
         }else{
@@ -40,7 +42,7 @@ export default function QuizSection(){
 
     return (
         <main>
-        <h2>gg</h2>
+        <h2>Timer</h2>
          <section className="quiz-section">
             <div className="question-section">
                  <div className="question-count">

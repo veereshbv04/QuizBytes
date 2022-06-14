@@ -4,30 +4,30 @@ const questions = [
         category:"js quiz",
         questions:[
             {
-                questionText:"who developed JavaScipt",
+                questionText:"JavaScript is a _ -side programming language",
                 optionsText:[
-                    {option:"Bill gates", isCorrect:false},
-                    {option:"henry ford", isCorrect:false},
-                    {option:"William james", isCorrect:true},
-                    {option:"James WIlliam", isCorrect:false}
+                    {option:"Client", isCorrect:false},
+                    {option:"Server", isCorrect:false},
+                    {option:"Both", isCorrect:true},
+                    {option:"None", isCorrect:false}
                 ]
             },
             {
-                questionText:"who developed Tyesscript",
+                questionText:"Which of the following will write the message,'Hello DataFlair!' in an alert box",
                 optionsText:[
-                    {option:"typesl gates", isCorrect:false},
-                    {option:"helliamry ford", isCorrect:false},
-                    {option:"james", isCorrect:true},
-                    {option:"James WIlliam", isCorrect:false}
+                    {option:"alert('Hello DataFlair!')", isCorrect:true},
+                    {option:"a('Hello DataFlair!')", isCorrect:false},
+                    {option:"msgAlert('Hello DataFlair!')", isCorrect:false},
+                    {option:"alertBox('Hello DataFlair!')", isCorrect:false}
                 ]
             },
             {
-                questionText:"who developed vscode",
+                questionText:"How do you find the minimum of x an y using JavaScript",
                 optionsText:[
-                    {option:"Microsoft", isCorrect:false},
-                    {option:"oracle", isCorrect:false},
-                    {option:"William james", isCorrect:true},
-                    {option:"James WIlliam", isCorrect:false}
+                    {option:"min(x,y)", isCorrect:false},
+                    {option:"max(x,y)", isCorrect:false},
+                    {option:"Math.min(x,y)", isCorrect:true},
+                    {option:"Math.low(x,y)", isCorrect:false}
                 ]
             }
         ]

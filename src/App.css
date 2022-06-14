@@ -50,9 +50,10 @@ nav{
 img{
     display: block;
     max-width: 100%;
-    
+    min-height: 18rem;
 }
 nav img{
+    min-height: 2rem;
     height: 3rem;
     border: 2px white solid;
     border-radius: 8px;
@@ -69,6 +70,9 @@ main{
     color: var(--TEXT-COLOR);
     height: inherit;
     display: flex;
+    flex-flow: wrap;
+    column-gap: 5rem;
+    row-gap: 5rem;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
