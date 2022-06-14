@@ -3,7 +3,7 @@
 
 
 # Introduction
- QuizBytes is an application built using ReactJs, it contains quizes of categories. It is responsive on all devices.
+ QuizBytes is an application built using ReactJs, it contains quizes of many categories. It is responsive on all devices.
  
  # Functionalities
 * It has an Homepage, it features upto five categories of Quizes, each with an call to action buttion "Play Now"
