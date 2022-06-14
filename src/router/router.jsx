@@ -1,7 +1,7 @@
 import {Routes, Route,} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import QuizSection from "../components/QuizSection";
-import ScorePage from "../components/ScorePage";
+import ScorePage from "../components/ScoreSection";
 import RulesCard from "../components/RulesCard";
 
 export default function Router(){

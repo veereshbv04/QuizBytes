@@ -179,6 +179,12 @@ main{
     .col-flex h2{
         font-size: 1.5rem;
     }
+    .score-text{
+    
+    top: 14%;
+    left: 30%;
+
+}
 }
 
 .col-flex{
