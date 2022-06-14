@@ -10,7 +10,7 @@ export default function RulesCard(){
                 <h2>2. No negative markings</h2>
                 <h2>3. You will be given one question and 4 options</h2>
                 <h2>4. As soon as you click on any option you will be moved to next question</h2>
-                <h2>5. You cannot revisit the question twice</h2>
+                <h2>5. You cannot revisit the questions twice</h2>
                
             </div>
            
