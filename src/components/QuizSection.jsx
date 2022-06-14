@@ -11,6 +11,7 @@ export default function QuizSection(){
     const categoryquestions = questionSet[0].questions
 
     const [currentquestion, setCurrentquestion] = useState(0)
+    const [score, setScore] = useState(0)
     const ptosend = JSON.parse(JSON.stringify(categoryquestions))
     console.log(ptosend)
     const [tosend, setToSend] = useState(ptosend)
@@ -25,6 +26,7 @@ export default function QuizSection(){
         // tosend[curr].optionsText[index]["userclicked"] = true
         
         if(isCorrect){
+            setScore(score + 1)
             answerCheckArray.push(true)
         }else{
             answerCheckArray.push(false)
@@ -32,7 +34,7 @@ export default function QuizSection(){
         if(currentquestion + 1 < categoryquestions.length){
              setCurrentquestion(currentquestion + 1)
         }else{
-        navigate("/scorepage",{state:tosend})
+        navigate("/scorepage",{state:{tosend,score}})
         }
     }
 
