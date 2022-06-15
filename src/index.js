@@ -5,6 +5,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import {BrowserRouter} from "react-router-dom";
 import {CategoryProvider} from "./contexts/category-context"
+
 // Call make Server
 makeServer();
 
@@ -13,7 +14,9 @@ ReactDOM.render(
     
     <BrowserRouter>
       <CategoryProvider>
-        <App/>
+        
+          <App/>
+        
       </CategoryProvider>
     </BrowserRouter>
     

@@ -1,25 +1,26 @@
-import { questions } from "../database/quizdata"
-import { useCategory } from "../contexts/category-context"
+import { useLocation } from "react-router-dom"
 
 export default function ScorePage(){
-    const {category} = useCategory()
-    const questionSet = questions.filter(item => item.id == category)
-    console.log(category)
-    const categoryquestions = questionSet[0].questions
-    console.log(categoryquestions)
+    const location = useLocation()  
+    const score = location.state.score
+    const categoryquestions = location.state.tosend
 
-    function optioncolor(isCorrect){
-        if(isCorrect){
+    function optionColor(options){
+        if(options.hasOwnProperty("userclicked") && !options.isCorrect){
+            return "red-btn"
+        }else if(options.isCorrect){
             return "green-btn"
         }else{
-            return "red-btn"
+            return "btn"
         }
     }
 
     return (
         <>
+        <h2 className="score-text ">You Scored {score}/ {categoryquestions.length}</h2>
         {categoryquestions.map((currentquestion,index) =>(
          <main key={index}>
+            
             <section className="quiz-section">
             <div className="question-section">
                  <div className="question-count">
@@ -29,7 +30,7 @@ export default function ScorePage(){
             </div>
             <div className="options-section">
                 {categoryquestions[index].optionsText.map(options =>(
-                    <button key={options.option} onClick={()=>handleClick(options.isCorrect)} className={optioncolor(options.isCorrect)} >{options.option}</button>
+                    <button key={options.option} onClick={()=>handleClick(options)} className={optionColor(options)} >{options.option}</button>
                 ))}
                
             </div>
@@ -38,7 +39,6 @@ export default function ScorePage(){
      </main>
         ))}
         </>
-       
-        
+
     )
 }

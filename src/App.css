@@ -50,9 +50,10 @@ nav{
 img{
     display: block;
     max-width: 100%;
-    
+    min-height: 18rem;
 }
 nav img{
+    min-height: 2rem;
     height: 3rem;
     border: 2px white solid;
     border-radius: 8px;
@@ -69,6 +70,9 @@ main{
     color: var(--TEXT-COLOR);
     height: inherit;
     display: flex;
+    flex-flow: wrap;
+    column-gap: 5rem;
+    row-gap: 5rem;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
@@ -117,6 +121,15 @@ main{
     cursor: pointer;
 }
 
+.score-text{
+    color: var(--TEXT-COLOR);
+    position: absolute;
+    margin: auto;
+    top: 15%;
+    left: 30%;
+
+}
+
 
 .quiz-section{
     width: 40rem;
@@ -154,4 +167,27 @@ main{
         flex-direction: column;
         width: 20rem;
     }
+    .question-count{
+        font-size: 1rem;
+    }
+    .question-count span{
+        font-size: 1rem;
+    }
+    .col-flex{
+        padding: 2rem;
+    }
+    .col-flex h2{
+        font-size: 1.5rem;
+    }
+    .score-text{
+    
+    top: 14%;
+    left: 30%;
+
+}
+}
+
+.col-flex{
+    display: flex;
+    flex-direction: column;
 }

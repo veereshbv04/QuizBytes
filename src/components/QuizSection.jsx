@@ -1,46 +1,49 @@
 import {useState} from "react"
 import { useCategory } from "../contexts/category-context"
+
 import {questions} from "../database/quizdata"
 import { useNavigate } from "react-router-dom"
-import ScorePage from "./ScorePage"
 export default function QuizSection(){
     const navigate = useNavigate()
     const {category, answerCheckArray} = useCategory()
     const questionSet = questions.filter(item => item.id == category)
-    console.log(questionSet)
     const categoryquestions = questionSet[0].questions
-    console.log("ddd")
-    const tosend = JSON.parse(JSON.stringify(categoryquestions))
-    console.log(tosend)
 
-    const [currentquestion, setCurrentquestion] = useState(0)
+    const [currentquestionno, setCurrentquestionno] = useState(0)
+    const [score, setScore] = useState(0)
+
+    const initialdata = JSON.parse(JSON.stringify(categoryquestions))
+    const [tosend, ] = useState(initialdata)
     
-    const handleClick = (isCorrect)=>{
+    
+    const handleClick = (isCorrect, curr, index)=>{
+        tosend[curr].optionsText[index]["userclicked"]=true
+        // tosend[curr].optionsText[index]["userclicked"] = true
+        
         if(isCorrect){
-            answerCheckArray.push(true)
-        }else{
-            answerCheckArray.push(false)
+            setScore(score + 1) 
         }
-        if(currentquestion + 1 < categoryquestions.length){
-             setCurrentquestion(currentquestion + 1)
+
+        if(currentquestionno + 1 < categoryquestions.length){
+             setCurrentquestionno(currentquestionno + 1)
         }else{
-            navigate("/scorepage")
+        navigate("/scorepage",{state:{tosend,score}})
         }
     }
 
     return (
         <main>
-        <h2>gg</h2>
+        <h2>Timer</h2>
          <section className="quiz-section">
             <div className="question-section">
                  <div className="question-count">
-                     <span>Question {currentquestion + 1}/</span>{categoryquestions.length}
+                     <span>Question {currentquestionno + 1}/</span>{categoryquestions.length}
                  </div>
-                 <h2>{categoryquestions[currentquestion].questionText}</h2>
+                 <h2>{categoryquestions[currentquestionno].questionText}</h2>
             </div>
             <div className="options-section">
-                {categoryquestions[currentquestion].optionsText.map(options =>(
-                    <button key={options.option} onClick={()=>handleClick(options.isCorrect)} className="btn">{options.option}</button>
+                {categoryquestions[currentquestionno].optionsText.map((options, index) =>(
+                    <button key={options.option} onClick={()=>handleClick(options.isCorrect,currentquestionno,index)} className="btn">{options.option}</button>
                 ))}
                
             </div>
